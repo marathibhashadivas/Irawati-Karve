@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>इरावती कर्वे माहिती</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background-image: url('i.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .content-container {
+            max-width: 92%;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .author-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .author-image img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        p {
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .author-image img:hover {
+            transform: scale(1.05);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li:before {
+            content: "•";
+            color: #4CAF50;
+            font-weight:bold;
+            position: absolute;
+            left: 0;
+            height: 10px;
+        }
+
+        .translate-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        .translate-btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 15px;
+            }
+
+            .translate-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-container {
+                padding: 10px;
+            }
+
+            .translate-btn {
+                padding: 8px 15px;
+                font-size: 22px;
+            }
+
+            h1, h2, h3 {
+                font-size: 1.2em;
+            }
+
+            .author-image img {
+                max-width: 100%;
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h1>इरावती कर्वे</h1>
+        <div class="author-image">
+            <img src="image.png" alt="इरावती कर्वे">
+        </div>
+
+        <div id="marathi-content">
+            <p>(१५ डिसेंबर १९०५ - ११ ऑगस्ट १९७०)</p>
+            <p>मानववंश शास्त्र, समाज शास्त्र, मानसशास्त्राच्या अभ्यासक इरावती कर्वे यांनी वैचारिक ग्रंथाबरोबरच ललित लेखन ही केले. उच्च शिक्षित, निरीश्वरवादी, बुध्दिप्रामाण्यवादी असलेल्या इरावती कर्वे यांचे इंग्रजी, संस्कृत भाषांवर प्रभुत्व होते. ललित निबंधातील खरी कलात्मकता व खरे लालित्य व्यक्त करणाऱ्या व आधुनिक विचारांच्या असल्या तरी आपल्या संस्कृतीशी त्यांची नाळ घट्ट जोडलेली होती.</p>
+
+            <h2>महत्वाचे साहित्यिक योगदान:</h2>
+            <ul>
+                <li>युगांत (समीक्षा ग्रंथ)</li>
+                <li>३ ललित लेख संग्रह</li>
+                <li>७ समाजशास्त्रीय ग्रंथ</li>
+            </ul>
+
+            <h3>पुरस्कार:</h3>
+            <ul>
+                <li>साहित्य अकादमी</li>
+                <li>राज्य पुरस्कार</li>
+            </ul>
+        </div>
+
+        <button class="translate-btn">English </button>
+    </div>
+
+    <script>
+        const translateBtn = document.querySelector(".translate-btn");
+        const marathiContent = document.getElementById("marathi-content");
+        let isMarathi = true;
+
+        translateBtn.addEventListener("click", function() {
+            if (isMarathi) {
+                // Switch to English
+                translateBtn.textContent = "मराठी ";
+                document.documentElement.lang = "en";
+                marathiContent.innerHTML = `
+                    <p>(15 December 1905 - 11 August 1970)</p>
+                    <p>Irawati Karve, a scholar of anthropology, sociology, and psychology, wrote both intellectual books and literary works. Highly educated, atheist, and rationalist, Irawati Karve had mastery over English and Sanskrit languages. Although her essays expressed true artistry and elegance and were of modern thoughts, her roots were firmly connected to her culture.</p>
+
+                    <h2>Important Literary Contributions:</h2>
+                    <ul>
+                        <li>Yuganta (Critique)</li>
+                        <li>3 Literary Essay Collections</li>
+                        <li>7 Sociological Books</li>
+                    </ul>
+
+                    <h3>Awards:</h3>
+                    <ul>
+                        <li>Sahitya Akademi</li>
+                        <li>State Award</li>
+                    </ul>
+                `;
+            } else {
+                // Switch back to Marathi
+                document.documentElement.lang = "mr";
+                location.reload();
+            }
+            isMarathi = !isMarathi;
+        });
+    </script>
+</body>
+</html>
